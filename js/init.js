@@ -15,6 +15,8 @@ jQuery(document).ready(function(){
 	beny_tm_down();
 	beny_tm_trigger_menu();
 	beny_tm_nav_bg();
+	beny_tm_modalbox_news();
+	beny_tm_modalbox_service();
 	beny_tm_cursor();
 	beny_tm_imgtosvg();
 	beny_tm_popup();
@@ -96,36 +98,7 @@ function beny_tm_down(){
 	});
 }
 
-// -------------------------------------------------
-// -------------  PROGRESS BAR  --------------------
-// -------------------------------------------------
 
-function tdProgress(container){
-	
-	"use strict";
-		
-	container.find('.progress_inner').each(function() {
-		var progress 		= jQuery(this);
-		var pValue 			= parseInt(progress.data('value'), 10);
-		var pColor			= progress.data('color');
-		var pBarWrap 		= progress.find('.bar');
-		var pBar 			= progress.find('.bar_in');
-		var number 			= progress.find('.number');
-		var label 			= progress.find('.label');
-		number.css({right:(100 - pValue)+'%'});
-		setTimeout(function(){label.addClass('opened');},500);
-		pBar.css({width:pValue+'%', backgroundColor:pColor});
-		setTimeout(function(){pBarWrap.addClass('open');});
-	});
-}
-
-jQuery('.tokyo_progress').each(function() {
-
-	"use strict";
-
-	var pWrap 			= jQuery(this);
-	pWrap.waypoint({handler: function(){tdProgress(pWrap);},offset:'90%'});	
-});
 
 // -----------------------------------------------------
 // ---------------   TRIGGER MENU    -------------------
@@ -209,6 +182,36 @@ function beny_tm_preloader(){
 	}
 }
 
+// -------------------------------------------------
+// -------------  MODALBOX NEWS  -------------------
+// -------------------------------------------------
+
+function beny_tm_modalbox_news(){
+	
+	"use strict";
+	
+	var modalBox	= jQuery('.beny_tm_modalbox_news');
+	var list 		= jQuery('.beny_tm_news ul li');
+	var closePopup	= modalBox.find('.close');
+	
+	
+	
+}
+
+// -------------------------------------------------
+// -------------  MODALBOX SERVICE -----------------
+// -------------------------------------------------
+
+function beny_tm_modalbox_service(){
+	
+	"use strict";
+	
+	var modalBox	= jQuery('.beny_tm_modalbox_service');
+	var list 		= jQuery('.beny_tm_services ul li');
+	var closePopup	= modalBox.find('.close');
+	
+
+}
 
 // -----------------------------------------------------
 // -----------------   MY LOAD    ----------------------
